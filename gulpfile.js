@@ -5,7 +5,7 @@ function js () {
 
 // scss/less 编译、压缩、输出css文件
 function css () {
-
+  console.log('this is css styles task')
 }
 
 // 监听这些文件的变化
@@ -18,9 +18,16 @@ function clean () {
 
 }
 
+// gulp Task 多任务
+// js任务
+exports.scripts = js;
+// css任务
+exports.styles = css;
+
 // 创建 gulp task
 exports.default = function () {
   console.log('hello gulp')
 }
 
-// 运行任务 npx gulp --tasks
+// 查看任务列表 npx gulp --tasks 或 yarn tasks
+// 运行任务 npx gulp scripts
